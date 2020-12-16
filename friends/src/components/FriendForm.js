@@ -33,16 +33,21 @@ export default class FriendForm extends React.Component {
                         authorization: localStorage.getItem('token') 
                     }
                 })
-                .then(res => console.log(res))
+                .then(res => this.props.updateState(res.data))
                 .catch(err => console.log(err));
+            this.setState({
+                body:{
+                    name: '',
+                    email: '',
+                    age: '',
+                } 
+            })
         } else { 
             return null;
         }
     }
 
     render() {
-        console.log(this.state.body)
-
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
