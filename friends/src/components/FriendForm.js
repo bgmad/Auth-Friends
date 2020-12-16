@@ -28,11 +28,11 @@ export default class FriendForm extends React.Component {
             this.state.body.email && 
             this.state.body.age) {
             axios
-                .post('http://localhost:5000/api/friends', {
+                .post('http://localhost:5000/api/friends', this.state.body, {
                     headers: {
                         authorization: localStorage.getItem('token') 
                     }
-                }, this.state)
+                })
                 .then(res => console.log(res))
                 .catch(err => console.log(err));
         } else { 
