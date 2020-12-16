@@ -15,7 +15,7 @@ function App() {
 
         <Switch>
           <PrivateRoute exact path='/home' component={Home}/>
-          <PrivateRoute exact path='/home/friends' component={FriendsList}/>
+          <PrivateRoute path='/home/friends' component={FriendsList}/>
           <Route exact path='/login' component={Login}/>
         </Switch>
       </div>
